@@ -124,8 +124,8 @@ public class Ex2_1  {
 
     public static void main(String[] args) throws IOException {
         String[] fileNames;
-        fileNames = createTextFiles(5, 1 ,10000);
-        System.out.println(Arrays.toString(fileNames));
+        fileNames = createTextFiles(5, 1 ,1000);
+     //   System.out.println(Arrays.toString(fileNames));
         System.out.println(getNumOfLines(fileNames));
         System.out.println(getNumOfLinesThreads(fileNames));
 /*
