@@ -1,31 +1,20 @@
 package partA;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Callable;
 
+public class ThreadPoolFiles implements Callable<Integer> {
 
-
-
-public class ThreadFiles extends Thread{
-    static AtomicInteger numOfLines = new AtomicInteger();
     private String fileName;
-    public ThreadFiles(String fileName){
-        this.fileName = fileName;
-    }
 
+    public ThreadPoolFiles(String filename) {
+        this.fileName = filename;
+    }
 
     @Override
-    public void run(){
-        countNumOfLines(this.fileName);
-    }
-
-
-    private void countNumOfLines(String fileName){
-
+    public Integer call() throws Exception {
         int numLines = 0; // Counter for the number of lines in the file
 
         File file = new File(this.fileName);
@@ -40,18 +29,11 @@ public class ThreadFiles extends Thread{
         while (sc.hasNextLine()) { // Read the file line by line
             String line = sc.nextLine(); // Read the current line
             numLines++; // Increment the line counter
-           //  System.out.println(line); // Print the line
+            // System.out.println(line); // Print the line
         }
 
         sc.close(); // Close the Scanner object
 
-        numOfLines.addAndGet(numLines);
-
+        return numLines;
     }
-
-    public int getNumOfLines(){
-        return numOfLines.get();
-    }
-
-
 }

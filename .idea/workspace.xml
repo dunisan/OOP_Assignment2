@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d27493fb-7c6c-4027-9d98-072032cd4067" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/partA/ThreadPoolFiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/partA/Ex2_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/partA/Ex2_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/partA/ThreadFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/partA/ThreadFiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672778212831</updated>
       <workItem from="1672778215253" duration="4053000" />
-      <workItem from="1672824466126" duration="13366000" />
+      <workItem from="1672824466126" duration="23926000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize">
       <created>1672778257181</created>
@@ -95,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672868576718</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1672869035662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672869035662</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,12 +135,12 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/partA/Ex2_1.java</url>
-          <line>82</line>
-          <properties class="partA.Ex2_1" method="getNumOfLinesThreads">
+          <line>138</line>
+          <properties class="partA.Ex2_1" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

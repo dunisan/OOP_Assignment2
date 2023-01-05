@@ -3,13 +3,11 @@ package partA;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.CountDownLatch;
-
-
-
+import java.util.concurrent.*;
 
 
 public class Ex2_1  {
@@ -79,34 +77,27 @@ public class Ex2_1  {
      * @returnnumber of all lines in all files.
      */
 
-
     public static int getNumOfLinesThreads(String[] fileNames){
 
+        List<Thread> list = new ArrayList<Thread> ();
         int arrLength = fileNames.length;
         int totalLines = 0;
-        CountDownLatch latch = new CountDownLatch(arrLength);
 
         for(int i=0; i<arrLength; i++){
             ThreadFiles thread = new ThreadFiles((fileNames[i]));
             thread.start();
+            list.add(thread);
+        }
 
+        for(Thread thread : list){
             try {
                 thread.join(); // Wait for the thread to complete
-                latch.countDown();
             } catch (InterruptedException e) {
                 // Handle the exception
             }
-            totalLines = thread.numOfLines.get();
         }
 
-        try {
-            latch.await();
-
-        } catch (InterruptedException e) {
-            // handle the exception
-        }
-
-        return totalLines;
+        return ThreadFiles.numOfLines.get();
     }
 
 
@@ -117,18 +108,54 @@ public class Ex2_1  {
      * @return of all lines in all files.
      */
 
-    public int getNumOfLinesThreadPool(String[] fileNames){
-        return 0;
+    public static int getNumOfLinesThreadPool(String[] fileNames){
+
+        int arrLength = fileNames.length;
+        int totalLines = 0;
+
+        ExecutorService pool = Executors.newFixedThreadPool(arrLength);
+        List<Future<Integer>> futureList = new ArrayList<Future<Integer>>();
+
+        for(int i=0; i<arrLength; i++){
+          //   Callable <Integer> callable = new ThreadPoolFiles("");
+            Future<Integer> future = pool.submit(new ThreadPoolFiles(fileNames[i]));
+            futureList.add(future);
+        }
+        for(Future<Integer> fut : futureList){
+            try {
+                //print the return value of Future, notice the output delay in console
+                // because Future.get() waits for task to get completed
+                totalLines += fut.get().intValue();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+            pool.shutdown();
+        }
+
+        return totalLines;
     }
 
 
     public static void main(String[] args) throws IOException {
         String[] fileNames;
-        fileNames = createTextFiles(5, 1 ,1000);
+        fileNames = createTextFiles(5000, 1 ,100);
      //   System.out.println(Arrays.toString(fileNames));
-        System.out.println(getNumOfLines(fileNames));
-        System.out.println(getNumOfLinesThreads(fileNames));
-/*
+        long start = System.currentTimeMillis();
+        System.out.println("Without threads: number of lines: " + getNumOfLines(fileNames));
+        long end = System.currentTimeMillis();
+        System.out.println("Time: " + ((end - start)/1000.0) + "  Seconds");
+
+        start = System.currentTimeMillis();
+        System.out.println("With threads: number of lines: " + getNumOfLinesThreads(fileNames));
+        end = System.currentTimeMillis();
+        System.out.println("Time: " + ((end - start)/1000.0) + "  Seconds");
+
+        start = System.currentTimeMillis();
+        System.out.println("With threadpool: number of lines: " + getNumOfLinesThreadPool(fileNames));
+        end = System.currentTimeMillis();
+        System.out.println("Time: " + ((end - start)/1000.0) + "  Seconds");
+
+        /*
 
 
  */
