@@ -23,4 +23,13 @@ And 3 more function that count the number of lines that are in all of the create
 * With creating n threads that every thread will open a different file
 * With threadpool. 
 
-#### 
+#### differences between threads and threadPool
+
+#### various tests on 500 files, 1500 files 5000 files 
+
+#### summery
+
+
+
+
+### part B in detail 
