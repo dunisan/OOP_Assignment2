@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 
 
 public class ThreadFiles extends Thread{
-    static AtomicInteger numOfLines = new AtomicInteger();
+    private AtomicInteger numOfLines = new AtomicInteger();
     private String fileName;
     public ThreadFiles(String fileName){
         this.fileName = fileName;

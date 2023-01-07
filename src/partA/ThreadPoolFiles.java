@@ -33,7 +33,7 @@ public class ThreadPoolFiles implements Callable<Integer> {
         }
 
         sc.close(); // Close the Scanner object
-
+        
         return numLines;
     }
 }

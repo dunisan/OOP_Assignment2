@@ -52,9 +52,9 @@ public class Ex2_1  {
      */
 
     public static int getNumOfLines(String[] fileNames) throws IOException{
-        int arrLength = fileNames.length;
+
         int countLines = 0;
-        for(int i=0; i<arrLength;i++) {
+        for(int i=0; i<fileNames.length;i++) {
             File file = new File(fileNames[i]);
             Scanner sc = new Scanner(file); // Create a Scanner object to read the file
 
@@ -79,7 +79,7 @@ public class Ex2_1  {
 
     public static int getNumOfLinesThreads(String[] fileNames){
 
-        List<Thread> list = new ArrayList<Thread> ();
+        List<ThreadFiles> list = new ArrayList<ThreadFiles> ();
         int arrLength = fileNames.length;
         int totalLines = 0;
 
@@ -87,17 +87,21 @@ public class Ex2_1  {
             ThreadFiles thread = new ThreadFiles((fileNames[i]));
             thread.start();
             list.add(thread);
-        }
 
-        for(Thread thread : list){
+        }
+        for(ThreadFiles threads : list){
             try {
-                thread.join(); // Wait for the thread to complete
+                threads.join(); // Wait for the thread to complete
+                totalLines += threads.getNumOfLines();
             } catch (InterruptedException e) {
                 // Handle the exception
             }
         }
 
-        return ThreadFiles.numOfLines.get();
+
+
+
+        return totalLines;
     }
 
 
@@ -138,11 +142,13 @@ public class Ex2_1  {
 
     public static void main(String[] args) throws IOException {
         String[] fileNames;
-        fileNames = createTextFiles(5000, 1 ,100);
-     //   System.out.println(Arrays.toString(fileNames));
+        fileNames = createTextFiles(300, 1 ,100);
+        //System.out.println(Arrays.toString(fileNames));
+
+
         long start = System.currentTimeMillis();
         System.out.println("Without threads: number of lines: " + getNumOfLines(fileNames));
-        long end = System.currentTimeMillis();
+         long end = System.currentTimeMillis();
         System.out.println("Time: " + ((end - start)/1000.0) + "  Seconds");
 
         start = System.currentTimeMillis();
