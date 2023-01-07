@@ -117,6 +117,7 @@ public class Ex2_1  {
         int arrLength = fileNames.length;
         int totalLines = 0;
 
+
         ExecutorService pool = Executors.newFixedThreadPool(arrLength);
         List<Future<Integer>> futureList = new ArrayList<Future<Integer>>();
 
