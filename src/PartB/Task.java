@@ -16,18 +16,23 @@ public class Task implements Callable <Object> , Comparable<Task>{
 
 
     private Callable task;
-    private int taskType;
+    private  TaskType tasktype;
 
 
-    public Task(Callable task) {
-        this.taskType = 5;
+    private Task(Callable task) {
+        tasktype.setPriority(5);
         this.task = task;
     }
-    public Task(int taskType, Callable task) {
-        if(taskType>=0 && taskType<=10)
-            this.taskType = taskType;
-        else taskType = 5;
+    private Task(TaskType tasktype, Callable task) {
+        if(tasktype.getPriorityValue()>=0 && tasktype.getPriorityValue()<=10)
+            this.tasktype.setPriority(tasktype.getPriorityValue());
+        else tasktype.setPriority(5);
         this.task = task;
+    }
+
+    public Task createTask(Callable task, TaskType tasktype){
+        Task tasks = new Task(tasktype, task);
+        return tasks;
     }
 
 
@@ -39,10 +44,10 @@ public class Task implements Callable <Object> , Comparable<Task>{
         else return null;
     }
 
-    public int getTaskType() {return taskType;}
+    public int getTaskType() {return tasktype.getPriorityValue();}
 
     public void setTaskType(int taskType) {
-        this.taskType = taskType;
+        this.tasktype.setPriority(taskType);
     }
 
 
@@ -56,7 +61,7 @@ public class Task implements Callable <Object> , Comparable<Task>{
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskType, task);
+        return Objects.hash(tasktype, task);
     }
 
     @Override
@@ -64,11 +69,78 @@ public class Task implements Callable <Object> , Comparable<Task>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task1 = (Task) o;
-        return taskType == task1.taskType && Objects.equals(task, task1.task);
+        return tasktype.getPriorityValue() == task1.tasktype.getPriorityValue() && Objects.equals(task, task1.task);
     }
 
     @Override
     public int compareTo(Task o) {
         return Integer.compare(this.getTaskType(), o.getTaskType());
     }
+
+
+
+
+
+
+
+
+
+    public enum TaskType {
+        COMPUTATIONAL(1) {
+            @Override
+            public String toString() {
+                return "Computational Task";
+            }
+        },
+
+        IO(2) {
+            @Override
+            public String toString() {
+                return "IO-Bound Task";
+            }
+        },
+
+        OTHER(3) {
+            @Override
+            public String toString() {
+                return "Unknown Task";
+            }
+        };
+
+        private int typePriority;
+
+        private TaskType(int priority) {
+            if (validatePriority(priority)) typePriority = priority;
+            else
+                throw new IllegalArgumentException("Priority is not an integer");
+        }
+
+        public void setPriority(int priority) {
+            if (validatePriority(priority)) this.typePriority = priority;
+            else
+                throw new IllegalArgumentException("Priority is not an integer");
+        }
+
+        public int getPriorityValue() {
+            return typePriority;
+        }
+
+        public TaskType getType() {
+            return this;
+        }
+
+        /**
+         * priority is represented by an integer value, ranging from 1 to 10
+         * * @param priority
+         *
+         * @return whether the priority is valid or not
+         */
+        private static boolean validatePriority(int priority) {
+            if (priority < 1 || priority > 10)
+                return false;
+            return true;
+        }
+
+    }
+
 }

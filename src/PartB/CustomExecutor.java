@@ -3,30 +3,34 @@ package PartB;
 // thread pool
 // in constructor we will build a task in put it into quqe of prioraty
 
+import java.util.List;
 import java.util.PriorityQueue;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
-public class CustomExecutor{
+public class CustomExecutor extends ThreadPoolExecutor{
 
-    private PriorityQueue pq;
+    private int numOfCores;
+    private int corePoolSize;
+    private int maxPoolSize;
 
-
-
-    // 1. methods that puts task into a queue
-    // 2. method that puts task into queue with typetask
-    // 3. method that puts task into queue without typetask
-    // 4. 2 and 3 must use 1
-    // 5. min number of threads in costomexecuter will be as half as the core that are available to jvm
-    // 6. max number of threads in costomexecuter will be as the number of core that are available to jvm -1
-    // 7. have a queue that puts task by prioraty
-    //         int numOfCores = Runtime.getRuntime().availableProcessors();
-
-
-
-
-    private void addTask(Task task){
-        pq.add(task);
+    public CustomExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
+        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
     }
+
+    public ExecutorService newFixedThreadPool(){
+        numOfCores = Runtime.getRuntime().availableProcessors();
+        corePoolSize = numOfCores/2;
+        maxPoolSize = numOfCores-1;
+        return new CustomExecutor(this.corePoolSize, this.maxPoolSize, 300, TimeUnit.MILLISECONDS, new PriorityBlockingQueue<>());
+    }
+
+    public Future<Object> submit(Callable task){
+        return super.submit(task);
+    }
+
+   // public Future<Object> submit(Callable task, Task.TaskType){
+
+    //}
 
 
 }
