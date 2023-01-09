@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d27493fb-7c6c-4027-9d98-072032cd4067" name="Changes" comment="not complete att all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PartB/CustomExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PartB/CustomExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PartB/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PartB/Task.java" afterDir="false" />
@@ -150,7 +151,7 @@
       <workItem from="1673115467753" duration="11112000" />
       <workItem from="1673158516337" duration="3700000" />
       <workItem from="1673187507279" duration="35400000" />
-      <workItem from="1673262191211" duration="16247000" />
+      <workItem from="1673262191211" duration="19515000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize">
       <created>1672778257181</created>
@@ -229,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673260513166</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="not complete att all">
+      <created>1673279730358</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673279730358</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

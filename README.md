@@ -46,6 +46,7 @@ That is because when we use normal threads in each time that a thread finishes h
 
 
 ### part B in detail 
+
 In this assigment we needed to create a threadpool that can relate with priority for Callable tasks.
 To do that we used a given enum tasktype and created two new classes: Task, CustomeExecuter.
 
