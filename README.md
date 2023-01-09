@@ -61,11 +61,12 @@ The CustomExecuter class extends ThreadPoolExecuter
 
 ### Fields and Methods
 The class holds five fields:  int numOfCores, maxPriority. PriorityBlockingQueue priorityBlockingQueue, Task top.
-Methods: * getCurrentMax() returns the max priority of the queue.
-         * update() updates the maxPriority field. used in afterExecute() (explantion in code) and in sumbit(Task task).
-         * afterExectue() execution completed normally and update() maxPriority.
-         * submit(Task task) submitting new task into a thread in the threadpool.
-         * gracefullyTerminate() shut down the threadpool.
+Methods: 
+* getCurrentMax() returns the max priority of the queue.
+* update() updates the maxPriority field. used in afterExecute() (explantion in code) and in sumbit(Task task).
+* afterExectue() execution completed normally and update() maxPriority.
+* submit(Task task) submitting new task into a thread in the threadpool.
+* gracefullyTerminate() shut down the threadpool.
          
          
 
