@@ -54,7 +54,8 @@ The Task class extends FutureTask and implements Callable and Comparable.
 
 ### Fields and Methods
 The class holds two field: Callable task and Tasktype tasktype which represent the task that is callable and the priority that the task have.
-The Task type has a class methods such as getters and setters and equals.
+The Task type has a class methods such as getters, setters, equals and more for future updates.
+We actually use only compareTo().
 
 #### CustomExecuter class
 The CustomExecuter class extends ThreadPoolExecuter
