@@ -1,36 +1,59 @@
 package PartB;
 
-// thread pool
-// in constructor we will build a task in put it into quqe of prioraty
 
-import java.util.List;
-import java.util.PriorityQueue;
+
 import java.util.concurrent.*;
+
+
 
 public class CustomExecutor extends ThreadPoolExecutor{
 
-    private int numOfCores;
+    private static int numOfCores = Runtime.getRuntime().availableProcessors();;
     private int corePoolSize;
     private int maxPoolSize;
 
-    public CustomExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
-        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
+    private static PriorityBlockingQueue priorityBlockingQueue;
+
+
+    private int maxPriority;
+
+
+    public CustomExecutor() {
+        super(numOfCores/2, numOfCores-1, 300, TimeUnit.MILLISECONDS,
+                 priorityBlockingQueue = new PriorityBlockingQueue<>());
     }
 
-    public ExecutorService newFixedThreadPool(){
-        numOfCores = Runtime.getRuntime().availableProcessors();
-        corePoolSize = numOfCores/2;
-        maxPoolSize = numOfCores-1;
-        return new CustomExecutor(this.corePoolSize, this.maxPoolSize, 300, TimeUnit.MILLISECONDS, new PriorityBlockingQueue<>());
+
+
+    public Future submit(Task task){
+        Future future = super.submit(task.getTask());
+        // Add here check
+        maxPriority = task.getTaskType().getPriorityValue();
+        System.out.println(numOfCores);
+       // System.out.println(max);
+        return future;
     }
 
-    public Future<Object> submit(Callable task){
-        return super.submit(task);
+    public Future submit(Callable task, TaskType type){
+        Task newtask = Task.createTask(task, type);
+        return (submit(newtask));
     }
 
-   // public Future<Object> submit(Callable task, Task.TaskType){
+    public Future submit(Callable task) {
+        Task newtask = Task.createTask(task);
+        priorityBlockingQueue.
+        return (submit(newtask));
+    }
 
-    //}
+    public void gracefullyTerminate(){
+        this.shutdown();
+    }
+
+
+    public int getCurrentMax(){
+        return 0;
+    }
+
 
 
 }
