@@ -13,7 +13,7 @@ public class CustomExecutor extends ThreadPoolExecutor{
     private int maxPoolSize;
 
     private static PriorityBlockingQueue priorityBlockingQueue;
-
+    private Task top;
 
     private int maxPriority;
 
@@ -23,25 +23,44 @@ public class CustomExecutor extends ThreadPoolExecutor{
                  priorityBlockingQueue = new PriorityBlockingQueue<>());
     }
 
+//    @Override
+//    protected void beforeExecute(Thread t, Runnable r) {
+//        super.beforeExecute(t, r);
+//        if(t ==  null)
+//            update();
+//    }
 
+    @Override
+    protected void afterExecute(Runnable r, Throwable t) {
 
-    public Future submit(Task task){
-        Future future = super.submit(task.getTask());
-        // Add here check
-        maxPriority = task.getTaskType().getPriorityValue();
-        System.out.println(numOfCores);
-       // System.out.println(max);
-        return future;
+        super.afterExecute(r, t);
+        if(t == null)
+            update();
+        else
+            System.out.println(t.getMessage());
     }
 
-    public Future submit(Callable task, TaskType type){
+
+
+    public <T> Future<T> submit(Task<T> task) {
+
+        if (task == null) throw new NullPointerException();
+        update();
+        execute((RunnableFuture)task);
+        return task;
+    }
+
+
+
+
+
+    public <T> Future<T> submit(Callable task, TaskType type){
         Task newtask = Task.createTask(task, type);
         return (submit(newtask));
     }
 
-    public Future submit(Callable task) {
+    public <T> Future<T>  submit(Callable<T> task) {
         Task newtask = Task.createTask(task);
-        priorityBlockingQueue.
         return (submit(newtask));
     }
 
@@ -51,9 +70,18 @@ public class CustomExecutor extends ThreadPoolExecutor{
 
 
     public int getCurrentMax(){
-        return 0;
+        return maxPriority;
     }
 
+    private void update() throws NullPointerException {
+        try {
+            top = (Task) priorityBlockingQueue.peek();
+            maxPriority = top.getTaskType().getPriorityValue();
+        }
+        catch (NullPointerException e){
+        }
+
+    }
 
 
 }

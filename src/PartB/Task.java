@@ -2,50 +2,41 @@ package PartB;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 
-public class Task<T> implements Callable<Object>, Comparable<Task>{
-
-    // tasktype enum
-    // callable
-    // method with return value
-    // factory that will make  -- static
-    // constructor - public class (callable) or public class (callable, task type)
-    // the objects of task should be camparable
-    // need to decide the חתימה of the class
-    // geters, seters, equals , hash code .
+public class Task<T> extends FutureTask<T> implements Callable<T>, Comparable<Task<T>>{
 
 
-    private Callable task;
+    private Callable<T> task;
     private  TaskType tasktype;
 
 
 
 
 
-    private Task(Callable task) {
+    private Task(Callable<T> task) {
         this(TaskType.OTHER, task);
     }
-    private Task(TaskType tasktype, Callable task) {
+    private Task(TaskType tasktype, Callable<T> task) {
+        super(task);
         this.task = task;
         this.tasktype = tasktype;
     }
 
 
-    public static Task createTask(Callable task, TaskType tasktype){
-        Task tasks = new Task(tasktype, task);
-        return tasks;
+    public static <T> Task<T> createTask(Callable<T> task, TaskType tasktype){
+        return new Task<T>(tasktype, task);
     }
 
-    public static Task createTask(Callable task){
-        Task newtask = new Task(task);
-        return newtask;
+    public  static<T> Task<T> createTask(Callable<T> task){
+        return new Task<T>(task);
     }
 
 
     @Override
     public T  call() throws Exception {
         if (this.task!=null)
-            return (T) task.call();
+            return task.call();
         else return null;
     }
 
@@ -56,7 +47,7 @@ public class Task<T> implements Callable<Object>, Comparable<Task>{
     }
 
 
-    public Callable getTask() {
+    public Callable<T> getTask() {
         return task;
     }
 
@@ -69,17 +60,17 @@ public class Task<T> implements Callable<Object>, Comparable<Task>{
         return Objects.hash(tasktype, task);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Task task1 = (Task) o;
-        return tasktype.getPriorityValue() == task1.tasktype.getPriorityValue() && Objects.equals(task, task1.task);
+
+    public boolean equals(Task<T> task) {
+        if (this.compareTo(task)==0) return true;
+        else
+            return false;
     }
 
     @Override
-    public int compareTo(Task o) {
-        return Integer.compare(this.tasktype.getPriorityValue(), o.tasktype.getPriorityValue());
+    public int compareTo(Task<T> o) {
+        int diff = o.tasktype.getPriorityValue() - this.tasktype.getPriorityValue();
+        return Integer.signum(diff);
     }
 
 
