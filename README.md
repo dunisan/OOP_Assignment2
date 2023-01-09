@@ -29,6 +29,11 @@ in a group of threads after we will finish the useage of a single thread the thr
 in a threadpool the thread will get recycled for the next task.
 #### various tests on 500 files, 1500 files 5000 files 
 //TODO
+
+
+
+
+
 #### summery
 In this assigment we needed to show the differnce between non threaded opperation, threaded operation and threadpool operation.
 To do that we created 2 additional classes: 
@@ -41,7 +46,26 @@ That is because when we use normal threads in each time that a thread finishes h
 
 
 ### part B in detail 
-In this assigment we needed to create a new Callable that can relate with priority.
-To do that we got used a given enum tasktype and created two new classes: Task, CustomeExectuer.
-The task hold two field: Callable task and Tasktype tasktype which represent the task that is callable and the priority that the task have.
+In this assigment we needed to create a threadpool that can relate with priority for Callable tasks.
+To do that we used a given enum tasktype and created two new classes: Task, CustomeExecuter.
+
+#### Task class
+The Task class extends FutureTask and implements Callable and Comparable.
+
+### Fields and Methods
+The class holds two field: Callable task and Tasktype tasktype which represent the task that is callable and the priority that the task have.
+The Task type has a call() method for the callable task, and more class methods such as getters and setters and equals.
+
+#### CustomExecuter class
+The CustomExecuter class extends ThreadPoolExecuter
+
+### Fields and Methods
+The class holds five fields:  int numOfCores, maxPriority. PriorityBlockingQueue priorityBlockingQueue, Task top.
+Methods: getCurrentMax() returns the max priority of the queue.
+         update() updates the maxPriority field. used in afterExecute() (explantion in code) and in sumbit(Task task).
+         afterExectue() execution completed normally and update() maxPriority.
+         submit(Task task) submitting new task into a thread in the threadpool.
+         gracefullyTerminate() shut down the threadpool.
+         
+         
 
