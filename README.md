@@ -24,12 +24,24 @@ And 3 more function that count the number of lines that are in all of the create
 * With threadpool. 
 
 #### differences between threads and threadPool
-
+The differnce between a group of threads and threadpool is simple:
+in a group of threads after we will finish the useage of a single thread the thread will close.
+in a threadpool the thread will get recycled for the next task.
 #### various tests on 500 files, 1500 files 5000 files 
-
+//TODO
 #### summery
+In this assigment we needed to show the differnce between non threaded opperation, threaded operation and threadpool operation.
+To do that we created 2 additional classes: 
+Threadfiles, Threadpoolfiles.
+In main we created the files, then we started to count the number of lines without any threads,
+after that we counted the same number of line with threading, and right after we did the same with thread pool.
 
-
+Our conclusion is that using thread is faster than no threads and threadpool is faster than thread.
+That is because when we use normal threads in each time that a thread finishes his job the thread get terminated and the threadpool reuse threads untill theres no more task to be done.
 
 
 ### part B in detail 
+In this assigment we needed to create a new Callable that can relate with priority.
+To do that we got used a given enum tasktype and created two new classes: Task, CustomeExectuer.
+The task hold two field: Callable task and Tasktype tasktype which represent the task that is callable and the priority that the task have.
+
