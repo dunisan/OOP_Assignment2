@@ -4,9 +4,9 @@ This project is assignment 2 in OOP class.
 The project is built from 2 part. 
  
 ## part A 
-In the first part, we perform a task in 3 different ways. 
+In the first part, we performed a task in 3 different ways. 
 The task is to create n files and then count the number of lines in 3 different ways.
-First time we count without threads, second time with threads, and in the last time using threadpool.
+First time we count without threads, second time with threads, and third using threadpool.
 we will analyze the different ways. 
 
 
@@ -29,19 +29,23 @@ And 3 more function that count the number of lines that are in all of the create
 
 #### differences between threads and threadPool
 The differnce between a group of threads and threadpool is simple:
-in a group of threads after we will finish the useage of a single thread the thread will close.
-in a threadpool the thread will get recycled for the next task.
+* in a group of threads after we will finish the useage of a single thread the thread will close.
+* in a threadpool the thread will get recycled for the next task.
 
 
 #### various tests on 500 files, 1500 files 5000 files:
 
-3 runs with files with bound of only until 10
+Three runs with file bound of 10
+
+
 <img width="460" alt="Screen Shot 5783-04-18 at 23 57 02" src="https://user-images.githubusercontent.com/57772699/211926518-73c73757-2e52-4609-8c99-ee486718d031.png">
 
 <img width="474" alt="Screen Shot 5783-04-19 at 0 41 41" src="https://user-images.githubusercontent.com/57772699/211933499-7b75fe4f-f52f-4a50-8ac2-fe86c91e1417.png">
 
 
 <img width="465" alt="Screen Shot 5783-04-18 at 23 59 32" src="https://user-images.githubusercontent.com/57772699/211926862-3d89f047-467e-4c4c-a804-c0ac2e6a03e0.png">
+
+Three runs with file bound of 10,000
 
 
 <img width="488" alt="Screen Shot 5783-04-19 at 0 12 49" src="https://user-images.githubusercontent.com/57772699/211929133-7cde702b-3053-457e-a75f-1b7360bf0e40.png">
@@ -50,6 +54,7 @@ in a threadpool the thread will get recycled for the next task.
 
 <img width="483" alt="Screen Shot 5783-04-19 at 0 14 35" src="https://user-images.githubusercontent.com/57772699/211929389-d1224329-6ba1-4fb6-a89c-695d8ed6c4a2.png">
 
+## additonal run with 10 threads
 
 <img width="560" alt="Screen Shot 5783-04-19 at 0 46 46" src="https://user-images.githubusercontent.com/57772699/211934385-5a371292-998c-40d6-b323-7d616db00b61.png">
 
@@ -62,14 +67,16 @@ in a threadpool the thread will get recycled for the next task.
 In this assigment we needed to show the differnce between non threaded opperation, threaded operation and threadpool operation.
 To do that we created 2 additional classes: 
 Threadfiles, Threadpoolfiles.
-In main we created the files, then we started to count the number of lines without any threads,
+
+In the main class we created the files, then we started to count the number of lines without any threads,
 after that we counted the same number of line with threading, and right after we did the same with thread pool.
 
-Our conclusion is that using thread is faster than no threads and threadpool is faster than thread.
-That is because when we use normal threads in each time that a thread finishes his job the thread get terminated and the threadpool reuse threads untill theres no more task to be done.
+After we had our first runs we didn't get to any conclusion because we used the number of threads that we created each run is the same as the number of files which is not efficient to do while using threadpool.
+To realize why threadpool is slower than multithreading we tried to use only 10 threads in each time, and that how we figured out that making a new thread in a threadpool is not efficient so to make it optimized we need to use less threaded than task to do.
 
 
 
+#### Class Diagram
 <img width="956" alt="Screen Shot 5783-04-18 at 23 49 24" src="https://user-images.githubusercontent.com/57772699/211925164-df530fea-8041-443d-aea0-99e0ef933a79.png">
 
 
@@ -86,7 +93,6 @@ The Task class extends FutureTask and implements Callable and Comparable.
 ### Fields and Methods
 The class holds two field: Callable task and Tasktype tasktype which represent the task that is callable and the priority that the task have.
 The Task type has a class methods such as getters, setters, equals and more for future updates.
-We actually use only compareTo().
 
 #### CustomExecuter class
 The CustomExecuter class extends ThreadPoolExecuter
