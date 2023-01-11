@@ -107,15 +107,14 @@ Methods:
 * gracefullyTerminate() -> shut down the threadpool.
 
 
+#### summery
+//TODO
+(Design patterns)
+(Difficulties)
 
 
-
-
-
-
-
-
-
+#### Class Diagram
+//TODO
 
 
 
