@@ -41,8 +41,7 @@ in a threadpool the thread will get recycled for the next task.
 
 <img width="488" alt="Screen Shot 5783-04-19 at 0 12 49" src="https://user-images.githubusercontent.com/57772699/211929133-7cde702b-3053-457e-a75f-1b7360bf0e40.png">
 
-
-<img width="487" alt="Screen Shot 5783-04-19 at 0 04 23" src="https://user-images.githubusercontent.com/57772699/211927707-51a755e6-7e06-4500-a448-82969df7073b.png">
+<img width="491" alt="Screen Shot 5783-04-19 at 0 36 35" src="https://user-images.githubusercontent.com/57772699/211932715-04f96345-931f-4d2c-beb2-29a32be94c4b.png">
 
 <img width="483" alt="Screen Shot 5783-04-19 at 0 14 35" src="https://user-images.githubusercontent.com/57772699/211929389-d1224329-6ba1-4fb6-a89c-695d8ed6c4a2.png">
 
