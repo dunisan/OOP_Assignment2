@@ -45,6 +45,12 @@ Our conclusion is that using thread is faster than no threads and threadpool is 
 That is because when we use normal threads in each time that a thread finishes his job the thread get terminated and the threadpool reuse threads untill theres no more task to be done.
 
 
+
+<img width="956" alt="Screen Shot 5783-04-18 at 23 49 24" src="https://user-images.githubusercontent.com/57772699/211925164-df530fea-8041-443d-aea0-99e0ef933a79.png">
+
+
+
+
 ### part B in detail 
 
 In this assigment we needed to create a threadpool that can relate with priority for Callable tasks.
@@ -81,7 +87,6 @@ Methods:
 
 
 
-<img width="956" alt="Screen Shot 5783-04-18 at 23 49 24" src="https://user-images.githubusercontent.com/57772699/211925164-df530fea-8041-443d-aea0-99e0ef933a79.png">
 
 
 
