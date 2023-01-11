@@ -1,16 +1,20 @@
 # OOP_Assignment2
 
-This project is assignment num 2 in OOP class. 
+This project is assignment 2 in OOP class. 
 The project is built from 2 part. 
  
 ## part A 
-In the first part, we perform a task in 3 different ways.  
-First time we perform without threads, second time with threads, and in the last time using threadpool. 
+In the first part, we perform a task in 3 different ways. 
+The task is to create n files and then count the number of lines in 3 different ways.
+First time we count without threads, second time with threads, and in the last time using threadpool.
+we will analyze the different ways. 
+
 
 ## part B 
 
-In this part we are building in new threadpool that can dicide which thread, 
-will run ecording to it's prioraty. 
+In this part we are building a new threadpool that can give priority to the different tasks. 
+
+
 
 
 ### part A in detail
@@ -27,13 +31,14 @@ And 3 more function that count the number of lines that are in all of the create
 The differnce between a group of threads and threadpool is simple:
 in a group of threads after we will finish the useage of a single thread the thread will close.
 in a threadpool the thread will get recycled for the next task.
-#### various tests on 500 files, 1500 files 5000 files 
-//TODO
 
 
+#### various tests on 500 files, 1500 files 5000 files:
+
+3 runs with files with bound of only until 10
 <img width="460" alt="Screen Shot 5783-04-18 at 23 57 02" src="https://user-images.githubusercontent.com/57772699/211926518-73c73757-2e52-4609-8c99-ee486718d031.png">
 
-<img width="474" alt="Screen Shot 5783-04-18 at 23 58 20" src="https://user-images.githubusercontent.com/57772699/211926646-c4c94ad3-afac-42c2-a6e9-ba7f39b5a1a1.png">
+<img width="474" alt="Screen Shot 5783-04-19 at 0 41 41" src="https://user-images.githubusercontent.com/57772699/211933499-7b75fe4f-f52f-4a50-8ac2-fe86c91e1417.png">
 
 
 <img width="465" alt="Screen Shot 5783-04-18 at 23 59 32" src="https://user-images.githubusercontent.com/57772699/211926862-3d89f047-467e-4c4c-a804-c0ac2e6a03e0.png">
@@ -44,6 +49,13 @@ in a threadpool the thread will get recycled for the next task.
 <img width="491" alt="Screen Shot 5783-04-19 at 0 36 35" src="https://user-images.githubusercontent.com/57772699/211932715-04f96345-931f-4d2c-beb2-29a32be94c4b.png">
 
 <img width="483" alt="Screen Shot 5783-04-19 at 0 14 35" src="https://user-images.githubusercontent.com/57772699/211929389-d1224329-6ba1-4fb6-a89c-695d8ed6c4a2.png">
+
+
+<img width="560" alt="Screen Shot 5783-04-19 at 0 46 46" src="https://user-images.githubusercontent.com/57772699/211934385-5a371292-998c-40d6-b323-7d616db00b61.png">
+
+<img width="555" alt="Screen Shot 5783-04-19 at 0 47 49" src="https://user-images.githubusercontent.com/57772699/211934543-6a81b18b-6536-4ef7-b684-d7ca46de2152.png">
+
+
 
 
 #### summery
