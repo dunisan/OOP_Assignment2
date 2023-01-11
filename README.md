@@ -69,6 +69,22 @@ Methods:
 * afterExectue() -> execution completed normally and update() maxPriority.
 * submit(Task task) -> submitting new task into a thread in the threadpool.
 * gracefullyTerminate() -> shut down the threadpool.
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="956" alt="Screen Shot 5783-04-18 at 23 49 24" src="https://user-images.githubusercontent.com/57772699/211925164-df530fea-8041-443d-aea0-99e0ef933a79.png">
+
+
+
          
          
 
