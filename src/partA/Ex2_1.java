@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.concurrent.*;
 
 
-public class Ex2_1  {
+public class Ex2_1{
 
 
 
@@ -118,7 +118,7 @@ public class Ex2_1  {
         int totalLines = 0;
 
 
-        ExecutorService pool = Executors.newFixedThreadPool(arrLength);
+        ExecutorService pool = Executors.newFixedThreadPool(10);
         List<Future<Integer>> futureList = new ArrayList<Future<Integer>>();
 
         for(int i=0; i<arrLength; i++){
@@ -143,8 +143,10 @@ public class Ex2_1  {
 
     public static void main(String[] args) throws IOException {
         String[] fileNames;
-        fileNames = createTextFiles(300, 1 ,100);
-        //System.out.println(Arrays.toString(fileNames));
+        fileNames = createTextFiles(4000, 1 ,10000);
+
+        System.out.println("with creating 4000 files and bound of 10000 lines per file:");
+        System.out.println("this time we create thredpool with size 10 instead fileNames.length");
 
 
         long start = System.currentTimeMillis();
@@ -162,10 +164,8 @@ public class Ex2_1  {
         end = System.currentTimeMillis();
         System.out.println("Time: " + ((end - start)/1000.0) + "  Seconds");
 
-        /*
 
 
- */
 
     }
 

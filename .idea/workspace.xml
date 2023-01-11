@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d27493fb-7c6c-4027-9d98-072032cd4067" name="Changes" comment="not complete att all">
+    <list default="true" id="d27493fb-7c6c-4027-9d98-072032cd4067" name="Changes" comment="add main">
+      <change afterPath="$PROJECT_DIR$/src/partA/Ex2_1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PartB/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PartB/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/partA/Ex2_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/partA/Ex2_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -51,13 +54,14 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="partA" />
       <recent name="PartB" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="PartB" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Ex2_1">
     <configuration name="Ex2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="partA.Ex2_1" />
       <module name="OOP_Assignment2" />
@@ -71,40 +75,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="OOP_Assignment2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PartB.Ex2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PartB.Ex2_1" />
+    <configuration name="Ex2_1Test.createTextFilesSeedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Assignment2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PartB.*" />
+          <option name="PATTERN" value="partA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="partA" />
+      <option name="MAIN_CLASS_NAME" value="partA.Ex2_1Test" />
+      <option name="METHOD_NAME" value="createTextFilesSeedTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PartB.main" />
+    <configuration name="Ex2_1Test.getNumOfLinesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Assignment2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PartB.*" />
+          <option name="PATTERN" value="partA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="partA" />
+      <option name="MAIN_CLASS_NAME" value="partA.Ex2_1Test" />
+      <option name="METHOD_NAME" value="getNumOfLinesTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.partialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.getCurrentMaxTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Assignment2" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +117,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="PartB" />
       <option name="MAIN_CLASS_NAME" value="PartB.Tests" />
-      <option name="METHOD_NAME" value="partialTest" />
+      <option name="METHOD_NAME" value="getCurrentMaxTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.shutdown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Assignment2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PartB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PartB" />
+      <option name="MAIN_CLASS_NAME" value="PartB.Tests" />
+      <option name="METHOD_NAME" value="shutdown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.Tests.partialTest" />
-        <item itemvalue="Application.main" />
-        <item itemvalue="Application.PartB.Ex2_1" />
         <item itemvalue="Application.Ex2_1" />
+        <item itemvalue="JUnit.Tests.getCurrentMaxTest" />
+        <item itemvalue="JUnit.Tests.shutdown" />
+        <item itemvalue="JUnit.Ex2_1Test.getNumOfLinesTest" />
+        <item itemvalue="JUnit.Ex2_1Test.createTextFilesSeedTest" />
       </list>
     </recent_temporary>
   </component>
@@ -149,6 +168,9 @@
       <workItem from="1673158516337" duration="3700000" />
       <workItem from="1673187507279" duration="35400000" />
       <workItem from="1673262191211" duration="20657000" />
+      <workItem from="1673342944249" duration="676000" />
+      <workItem from="1673389179424" duration="2310000" />
+      <workItem from="1673471393166" duration="6409000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize">
       <created>1672778257181</created>
@@ -241,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673283225202</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add main">
+      <created>1673342961474</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673342961474</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +293,8 @@
     <MESSAGE value="1" />
     <MESSAGE value="Update of readme" />
     <MESSAGE value="not complete att all" />
-    <option name="LAST_COMMIT_MESSAGE" value="not complete att all" />
+    <MESSAGE value="add main" />
+    <option name="LAST_COMMIT_MESSAGE" value="add main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,12 +318,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/PartB/Tests.java</url>
-          <line>15</line>
+          <line>16</line>
           <properties class="PartB.Tests" method="partialTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PartB/Tests.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

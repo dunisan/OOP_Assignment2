@@ -11,7 +11,6 @@ import java.util.concurrent.FutureTask;
  */
 public class Task<T> extends FutureTask<T> implements Callable<T>, Comparable<Task<T>>{
 
-
     private Callable<T> task; // The callable task
     private  TaskType tasktype; // the priorityType of the task
 
