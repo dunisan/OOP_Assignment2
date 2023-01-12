@@ -108,13 +108,19 @@ Methods:
 
 
 #### summery
-//TODO
-(Design patterns)
-(Difficulties)
+In this task we needed to expand the abilities of ThreadPool to give priorityies to tasks.
+To do that we've needed to use a unique design pattern 
 
+//TODO
+
+In this task we also needed to implement a function getCurrentMax(); that returns the current max priority of the tasks in the queue.
+to implement that we used the "Observer" design pattern, we implemented function called update(); that updates the maxPriority field every time that a submit occurs. 
+More basically the observer is the field maxPriority.
+
+(Difficulties)
+In this task we had several difficulties such as //TODO
 
 #### Class Diagram
-//TODO
 
 
 <img width="675" alt="Screen Shot 5783-04-19 at 1 38 01" src="https://user-images.githubusercontent.com/57772699/211941151-6646446b-f357-4c6a-9d3b-62fe3a3475e2.png">
