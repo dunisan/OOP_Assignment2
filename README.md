@@ -1,7 +1,7 @@
 # OOP_Assignment2
 
 This project is assignment 2 in OOP class. 
-The project is built from 2 part. 
+The project is built by 2 part. 
  
 ## part A 
 In the first part, we performed a task in 3 different ways. 
@@ -12,7 +12,7 @@ we will analyze the different ways.
 
 ## part B 
 
-In this part we are building a new threadpool that can give priority to the different tasks. 
+In this part we are building a new threadpool that can use priority system to exceute different tasks in different priority. 
 
 
 
