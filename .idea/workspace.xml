@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d27493fb-7c6c-4027-9d98-072032cd4067" name="Changes" comment="add main">
-      <change afterPath="$PROJECT_DIR$/src/partA/Ex2_1Test.java" afterDir="false" />
+    <list default="true" id="d27493fb-7c6c-4027-9d98-072032cd4067" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PartB/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PartB/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/partA/Ex2_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/partA/Ex2_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +167,7 @@
       <workItem from="1673262191211" duration="20657000" />
       <workItem from="1673342944249" duration="676000" />
       <workItem from="1673389179424" duration="2310000" />
-      <workItem from="1673471393166" duration="6409000" />
+      <workItem from="1673471393166" duration="9760000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize">
       <created>1672778257181</created>
@@ -270,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673342961474</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update">
+      <created>1673478932101</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673478932101</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update">
+      <created>1673479046848</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673479046848</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,12 +300,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialize" />
-    <MESSAGE value="update" />
     <MESSAGE value="1" />
     <MESSAGE value="Update of readme" />
     <MESSAGE value="not complete att all" />
     <MESSAGE value="add main" />
-    <option name="LAST_COMMIT_MESSAGE" value="add main" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

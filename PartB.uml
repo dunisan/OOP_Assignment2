@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>PartB</OriginalElement>
+  <nodes>
+    <node x="-96.25050240922326" y="541.4145189256462">java.util.concurrent.Callable</node>
+    <node x="-414.29788368876035" y="727.5471951405476">PartB.TaskType</node>
+    <node x="-423.59355058443634" y="615.671878870314">java.lang.Comparable</node>
+    <node x="-71.8712759792461" y="-124.72490571065751">PartB.Tests</node>
+    <node x="-371.125" y="73.04627841894148">PartB.Task</node>
+    <node x="169.28931176945457" y="73.04627841894148">PartB.CustomExecutor</node>
+    <node x="-694.719260149851" y="382.53236613716984">java.util.concurrent.FutureTask</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="PartB.Task" target="java.util.concurrent.FutureTask" relationship="GENERALIZATION">
+      <point x="-118.875" y="-125.5" />
+      <point x="-331.5" y="283.0" />
+      <point x="-612.969260149851" y="283.0" />
+      <point x="-81.75" y="16.440176807212662" />
+    </edge>
+    <edge source="PartB.Task" target="java.lang.Comparable" relationship="REALIZATION">
+      <point x="39.625" y="-125.5" />
+      <point x="-173.0" y="458.5" />
+      <point x="-337.59355058443634" y="458.5" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="PartB.Task" target="java.util.concurrent.Callable" relationship="REALIZATION">
+      <point x="39.625" y="-125.5" />
+      <point x="-173.0" y="376.03982468727895" />
+      <point x="-60.75050240922326" y="376.03982468727895" />
+      <point x="-35.5" y="26.5" />
+    </edge>
+    <edge source="PartB.TaskType" target="java.lang.Comparable" relationship="REALIZATION">
+      <point x="111.5" y="-0.0" />
+      <point x="100.73770405994037" y="809.0471951405476" />
+      <point x="100.73770405994037" y="624.9027253948099" />
+      <point x="23.662006879530054" y="624.9027253948099" />
+      <point x="23.662006879530054" y="642.171878870314" />
+      <point x="-86.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7642261780906583" showDependencies="false" x="12.797136681782035" y="256.8399598517169" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
