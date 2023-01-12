@@ -116,7 +116,7 @@ To fix that we extended FutureTask and added a blockingPriorityQueue because Com
 That kind of solution reminds the "Adapter" design pattern as the FutureTask is the adapter and Comparable is the adaptive.
 
 In this task we also needed to implement a function getCurrentMax(); that returns the current max priority of the tasks in the queue.
-to implement that we used the "Observer" design pattern, we implemented function called update(); that updates the maxPriority field every time that a submit occurs. 
+to implement that we used the "Observer" design pattern, we implemented function called update(); that updates the maxPriority field every time that a submit occurs, and every time a thread finshis to execute. 
 More basically the observer is the field maxPriority.
 
 
