@@ -1,7 +1,7 @@
 # OOP_Assignment2
 
 This project is assignment 2 in OOP class. 
-The project is built from 2 part. 
+The project is built by 2 part. 
  
 ## part A 
 In the first part, we performed a task in 3 different ways. 
@@ -12,7 +12,7 @@ we will analyze the different ways.
 
 ## part B 
 
-In this part we are building a new threadpool that can give priority to the different tasks. 
+In this part we are building a new threadpool that can use priority system to exceute different tasks in different priority. 
 
 
 
@@ -108,15 +108,23 @@ Methods:
 
 
 #### summery
-//TODO
-(Design patterns)
-(Difficulties)
+
+In this task we needed to expand the abilities of ThreadPool to give priorityies to tasks.
+To do that we've needed to implement Callable and Comparable.
+The problem was that a Callable is looking for a empty thread and execute without any priority.
+To fix that we extended FutureTask and added a blockingPriorityQueue because Comparable knows how to compare between two futureTask in a blockingPriorityQueue, and now our object Task is part of FutureTask and the problem solved.
+That kind of solution reminds the "Adapter" design pattern as the FutureTask is the adapter and Comparable is the adaptive.
+
+In this task we also needed to implement a function getCurrentMax(); that returns the current max priority of the tasks in the queue.
+to implement that we used the "Observer" design pattern, we implemented function called update(); that updates the maxPriority field every time that a submit occurs. 
+More basically the observer is the field maxPriority.
+
 
 
 #### Class Diagram
-//TODO
 
 
+<img width="675" alt="Screen Shot 5783-04-19 at 1 38 01" src="https://user-images.githubusercontent.com/57772699/211941151-6646446b-f357-4c6a-9d3b-62fe3a3475e2.png">
 
 
          
