@@ -113,7 +113,7 @@ In this task we needed to expand the abilities of ThreadPool to give priorityies
 To do that we've needed to implement Callable and Comparable.
 The problem was that a Callable is looking for a empty thread and execute without any priority.
 To fix that we extended FutureTask and added a blockingPriorityQueue because Comparable knows how to compare between two futureTask in a blockingPriorityQueue, and now our object Task is part of FutureTask and the problem solved.
-That kind of solution reminds the "Adapter" design pattern as the FutureTask is the adapter and Comparable is the adaptive.
+That kind of solution reminds the "Adapter" design pattern as the FutureTask is the adapter and Task is the adaptive.
 
 In this task we also needed to implement a function getCurrentMax(); that returns the current max priority of the tasks in the queue.
 to implement that we used the "Observer" design pattern, we implemented function called update(); that updates the maxPriority field every time that a submit occurs, and every time a thread finshis to execute. 
